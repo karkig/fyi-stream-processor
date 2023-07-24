@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: stream-handler
+    datasource:
+      url: jdbc:h2:mem:testdb
+      driverClassName: org.h2.Driver
+      username: sa
+      password:
+  h2:
+    console:
+      enabled: true
+  jpa: database-platform=org.hibernate.dialect.H2Dialect
+
+server:
+  port: 8001
+eureka:
+  instance:
+    hostname: discovery-server
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8762/eureka/
